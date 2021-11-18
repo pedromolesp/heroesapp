@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/AuthContext';
+import { types } from '../../types/types'
+export const LoginScreen = () => {
+    const navigate = useNavigate();
 
-export const LoginScreen = ({ history }) => {
+    //Con useContext puedo llamar a los datos definidos en el provider de heroesApp
+    const { dispatch } = useContext(AuthContext);
     const handleClick = () => {
-        history.replace('/');
+        const action = {
+            type: types.login,
+            payload: { name: 'Pedro' }
+        }
+        // const reducer = authReducer({
+        //     name: props.user, logged: props.user.logged
+
+        // }, action);
+        dispatch(action);
     }
     return (
         <div>

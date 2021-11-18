@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
     Link
 } from "react-router-dom";
@@ -13,10 +13,10 @@ export const AppRouter = () => {
         <Router>
             <div>
 
-                <Switch>
+                <Routes >
                     <Route exact path="/login" component={LoginScreen} />
                     <Route path="/" component={DashboardRoute} />
-                </Switch>
+                </Routes >
             </div>
         </Router>
     );
