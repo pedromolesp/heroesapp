@@ -1,10 +1,13 @@
-import { types } from "../types/types";
+import { types } from '../types/types';
+
 // const state = {
-//     name:'Pedro',
-//     logged:true
+//     name: 'Fernando',
+//     logged: true
 // }
-export const authReducer = (state = {}, action) => {
-    switch (action.type) {
+
+export const authReducer = ( state = {}, action ) => {
+
+    switch ( action.type ) {
         case types.login:
             return {
                 ...action.payload,
@@ -15,8 +18,9 @@ export const authReducer = (state = {}, action) => {
             return {
                 logged: false
             }
-
+    
         default:
             return state;
     }
+
 }
